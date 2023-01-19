@@ -9,6 +9,7 @@
         "php": ">=8.2.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "aws/aws-sdk-php-symfony": "^2.5",
         "doctrine/doctrine-bundle": "^2.8",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.14",
@@ -18,6 +19,7 @@
         "symfony/form": "6.2.*",
         "symfony/framework-bundle": "6.2.*",
         "symfony/runtime": "6.2.*",
+        "symfony/twig-bundle": "6.2.*",
         "symfony/yaml": "6.2.*"
     },
     "config": {
