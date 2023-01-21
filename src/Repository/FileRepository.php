@@ -39,6 +39,23 @@ class FileRepository extends ServiceEntityRepository
         }
     }
 
+    public function getAll()
+    {
+        $qb = $this->createQueryBuilder('f');
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+
+    public function findOneById($id): ?File
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return File[] Returns an array of File objects
 //     */

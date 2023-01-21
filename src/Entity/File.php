@@ -28,8 +28,10 @@ class File
 
     public function setPath(string $path): self
     {
-        $this->path = $path;
+
+        $this->path = urldecode($path);
 
         return $this;
     }
+
 }

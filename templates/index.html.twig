@@ -8,4 +8,12 @@
 <input type="submit">
 {{ form_end(form) }}
 
+<ul>
+    {% for file in files %}
+        <li>
+            <a href="{{ path('aws_download_file', {id: file.id})  }}">{{ file.path }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
 
