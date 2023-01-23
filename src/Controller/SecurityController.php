@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,6 +43,10 @@ class SecurityController extends AbstractController
         $jwtPayload = json_decode($tokenPayload);
 
         var_dump($jwtPayload);
+
+        $user = $this->getDoctrine()
+            ->getRepository('UserBundle:User')
+            ->findOneByEmail($jwtPayload['email']);
 
         return new Response('');
     }
